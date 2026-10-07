@@ -38,15 +38,7 @@ jobs:
         run: terraform validate
 
       - name: Terraform Plan
-        run: terraform plan- name: Checkout code
-        uses: actions/checkout@v4.2.2
-
-      - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v3.1.2
-
-      - name: Terraform Init
-        run: terraform init
-        
+        run: terraform plan
 
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
